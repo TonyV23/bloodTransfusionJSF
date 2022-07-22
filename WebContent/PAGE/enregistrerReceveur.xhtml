@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+  <head>
+  	<meta  http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  </head>
+
+  <body>
+  		<center><h2><h:outputText value="GESTION DE TRANSFUSION"/></h2></center>
+  		<center><h3><h:outputText value="PAGE DES RECEVEURS"/></h3></center>
+  		<rich:panel>
+  			<h:form>
+  				<h:panelGrid columns="2" style="margin-left:auto;margin-right:auto;">
+  					<h:outputText value="NOM:" />
+			  		<h:inputText value="#{receveur.nom_receveur}"/>
+			  		
+			  		<h:outputText value="PRENOM:" />
+			  		<h:inputText value="#{receveur.prenom_receveur}"/>
+			  		
+			  		<h:outputText value="SEXE:" />
+			  		<h:selectOneMenu value="#{receveur.sexe_receveur}" style= "width : 148px;">
+			  			<f:selectItem itemValue=""/>
+			  			<f:selectItem itemValue="MASCULIN"/>
+			  			<f:selectItem itemValue="FEMININ"/>
+			  		</h:selectOneMenu>
+			  		
+			  		<h:outputText value="GROUPE SANGUIN:" />
+			  		<h:selectOneMenu value="#{receveur.groupe_sanguin_receveur}" style= "width : 148px;">
+			  			<f:selectItem itemValue=""/>
+			  			<f:selectItem itemValue="A+"/>
+			  			<f:selectItem itemValue="A-"/>
+			  			<f:selectItem itemValue="B+"/>
+			  			<f:selectItem itemValue="B-"/>
+			  			<f:selectItem itemValue="AB"/>
+			  			<f:selectItem itemValue="O-"/>
+			  			<f:selectItem itemValue="O+"/>
+			  		</h:selectOneMenu>
+  				</h:panelGrid>
+  				
+  				<h:panelGrid columns="2" style="margin-left:auto;margin-right:auto;">
+  					<a4j:commandButton action="#{receveur.EnregistrerReceveur}" value="Enregistrer" data="#{receveur.info}" oncomplete="alert(data)"/>
+				   <a4j:commandButton action="Edit" value="Afficher les enregistrements" />
+  				</h:panelGrid>
+  			</h:form>
+  		</rich:panel>
+  </body>
+</html>
+      

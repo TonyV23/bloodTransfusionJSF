@@ -28,7 +28,7 @@
   			
   			<h:panelGrid columns="1" style="margin-left:auto;margin-right:auto;" >
   				<h:panelGroup>		
-  					<a4j:commandButton id="btn_mod"  disabled="#{donneur.mody}" action="#{donneur.updateDataBase}" value="Modifier"  data="#{donneur.info}" oncomplete="alert(data)" reRender="table,btn_mod"/>
+  					<a4j:commandButton id="btn_mod"  disabled="#{donneur.modify}" action="#{donneur.updateDataBase}" value="Modifier"  data="#{donneur.info}" oncomplete="alert(data)" reRender="table,btn_mod"/>
   				</h:panelGroup>
 			
 			<rich:dataTable  value="#{donneur.liste_des_donneurs_dans_la_base_de_donnees}" var="donneur" id="table" >

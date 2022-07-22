@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+  <head>
+  	<meta  http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  </head>
+
+  <body>
+  		<center><h2><h:outputText value="LISTE DE TOUS LES RECEVEURS"/></h2></center>
+  		<h:form>
+  			<h:panelGrid columns="1" style="margin-left:auto;margin-right:auto;">
+  				<rich:dataTable value="#{receveur.liste_des_receveurs_dans_la_base_de_donnees}" var="rec" id="tablereceveur">
+  					
+  					<rich:column>
+  						<f:facet name="header">Id</f:facet>
+		  				<h:outputText value="#{rec.id}" />
+  					</rich:column>
+  					
+  					<rich:column>
+		  				<f:facet name="header">NOM</f:facet>
+		  				<h:outputText value="#{rec.nom_receveur}" />
+		  			</rich:column>
+		  			
+		  			<rich:column>
+		  				<f:facet name="header">PRENOM</f:facet>
+		  				<h:outputText value="#{rec.prenom_receveur}" />
+		  			</rich:column>
+		  			
+		  			<rich:column>
+		  				<f:facet name="header">SEXE</f:facet>
+		  				<h:outputText value="#{rec.sexe_receveur}" />
+		  			</rich:column>
+		  			
+		  			<rich:column>
+		  				<f:facet name="header">GROUPE SANGUIN</f:facet>
+		  				<h:outputText value="#{rec.groupe_sanguin_receveur}" />
+		  			</rich:column>
+		  			
+		  			<rich:column>
+			  			<f:facet name="header">Modifier</f:facet>
+			  			<a4j:commandButton action="#{rec.ModifierReceveur}" value="Modifier" data="#{rec.info}" oncomplete="alert(data)"/>
+		  			</rich:column>
+		  			
+		  			<rich:column>
+			  			<f:facet name="header">Supprimer</f:facet>
+			  			<a4j:commandButton action="#{rec.SupprimerReceveur}" value="Supprimer" data="#{rec.info}" oncomplete="alert(data)"/>
+		  			</rich:column> 			
+  				</rich:dataTable>
+  				
+  				<h:panelGrid columns="1" style="margin-left:auto;margin-right:auto;">
+		  			<h:commandButton action="Save" value="Enregistrement" />
+		  		</h:panelGrid>
+		  		
+  			</h:panelGrid>>
+  		</h:form>
+  </body>
+</html>
+  
+	

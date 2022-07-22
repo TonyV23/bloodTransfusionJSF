@@ -153,7 +153,7 @@ public class Receveur {
 		
 		int info = dbConnection.updateDataBase("delete from receveur where id="+id+";");
 		if (info > 0)
-			this.setInfo("Donneur supprimé avec succes");
+			this.setInfo("Receveur supprimé avec succes");
 		else
 			this.setInfo("Erreur de suppression !!");
 	}
@@ -195,5 +195,16 @@ public class Receveur {
 			this.setInfo("Erreur de modification !!");
 	}
 	
+	// la methode appellée pour modifier les details du receveur 
+	public void detailsReceveur(){		
+		if(select_receveur != null){
+			this.modify = false;
+			this.id = select_receveur.id;
+			this.nom_receveur = select_receveur.nom_receveur;
+			this.prenom_receveur = select_receveur.prenom_receveur;
+			this.sexe_receveur = select_receveur.sexe_receveur;
+			this.groupe_sanguin_receveur = select_receveur.groupe_sanguin_receveur;	     
+		}
+	}
 
 }
