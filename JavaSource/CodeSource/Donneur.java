@@ -190,4 +190,16 @@ public class Donneur {
 		}else 
 			this.setInfo("Erreur de modification !!");
 	}
+	
+	// la methode appellée pour modifier les details du donneur 
+	public void detailsDonneur(){		
+		if(select_donneur != null){
+			this.modify = false;
+			this.id = select_donneur.id;
+			this.nom_donneur = select_donneur.nom_donneur;
+			this.prenom_donneur = select_donneur.prenom_donneur;
+			this.sexe_donneur = select_donneur.sexe_donneur;
+			this.groupe_sanguin_donneur = select_donneur.groupe_sanguin_donneur;	     
+		}
+	}
 }

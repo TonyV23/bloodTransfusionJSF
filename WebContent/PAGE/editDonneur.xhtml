@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+  <head><meta  http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+
+  <body>
+  	<a4j:keepAlive beanName="donneur" />
+  	<rich:panel>
+  		<h:panelGrid columns="1"  style="margin-left:auto;margin-right:auto;" >
+  			<h:outputText value="LISTE DE TOUS LES DONNEURS" style="FONT-SIZE: xx-large; FONT-FAMILY: 'Candara'; FONT-WEIGHT: bold; FONT-STYLE: italic;color:black" />
+  		</h:panelGrid>
+  		
+  		<h:form>
+  		
+  			<h:panelGrid columns="2"  style="margin-left:auto;margin-right:auto;">
+  				<h:panelGrid columns="4"  style="margin-left:auto;margin-right:auto;" >
+  					<h:outputText value="NOM" /> <h:inputText value="#{donneur.nom_donneur}"  id="id_nom"/>
+  					<h:outputText value="PRENOM" /> <h:inputText value="#{donneur.prenom_donneur}"  id="id_prenom"/>
+  					<h:outputText value="SEXE" /> <h:inputText value="#{donneur.sexe_donneur}"  id="id_sexe"/>
+  					<h:outputText value="GROUPE SANGUIN" /> <h:inputText value="#{donneur.groupe_sanguin_donneur}"  id="id_groupe_sanguin"/>
+  				</h:panelGrid>
+  			</h:panelGrid>
+  			
+  			<h:panelGrid columns="1" style="margin-left:auto;margin-right:auto;" >
+  				<h:panelGroup>		
+  					<a4j:commandButton id="btn_mod"  disabled="#{donneur.mody}" action="#{donneur.updateDataBase}" value="Modifier"  data="#{donneur.info}" oncomplete="alert(data)" reRender="table,btn_mod"/>
+  				</h:panelGroup>
+			
+			<rich:dataTable  value="#{donneur.liste_des_donneurs_dans_la_base_de_donnees}" var="donneur" id="table" >
+				<a4j:support event="onRowDblClick" action="#{donneur.detailsDonneur}"  reRender="btn_mod,id_nom,id_prenom,id_sexe,id_groupe_sanguin"> 
+  					<f:setPropertyActionListener value="#{donneur}" target="#{donneur.select_donneur}" />
+  				</a4j:support>
+  			
+  			<f:facet name="header">LISTE DES DONNEURS DEJA ENREGISTRES</f:facet>
+  			
+  			<rich:column>
+  				<f:facet name="header">ID</f:facet>
+  				<h:outputText value="#{donneur.id}" />
+  			</rich:column>
+  			
+  			<rich:column>
+  				<f:facet name="header">NOM</f:facet>
+  				<h:outputText value="#{donneur.nom_donneur}" />
+  			</rich:column>
+  			
+  			<rich:column>
+  				<f:facet name="header">PRENOM</f:facet>
+  				<h:outputText value="#{donneur.prenom_donneur}" />
+  			</rich:column>
+  			
+  			<rich:column>
+  				<f:facet name="header">SEXE</f:facet>
+  				<h:outputText value="#{donneur.sexe_donneur}" />
+  			</rich:column>
+  			
+  			<rich:column>
+  				<f:facet name="header">GROUPE SANGUIN</f:facet>
+  				<h:outputText value="#{donneur.groupe_sanguin_donneur}" />
+  			</rich:column>
+			 
+			<rich:column>
+			  	<f:facet name="header">SUPPRIMER</f:facet>	
+			  		<a4j:commandButton action="#{donneur.SupprimerDonneur}" value="Supprimer" data="#{donneur.info}" oncomplete="alert(data)" reRender="tab" style="COLOR: #ffffff; BACKGROUND-COLOR: #000000;">
+		  				<f:param name="id" value="#{donneur.id}"/>
+		  		</a4j:commandButton>
+		  	</rich:column>
+		  	
+		  	</rich:dataTable>
+		  	</h:panelGrid>
+  		</h:form>
+  	</rich:panel>
+  </body>
+</html>
+  
