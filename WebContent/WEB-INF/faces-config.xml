@@ -12,6 +12,57 @@
   <managed-bean-class>CodeSource.Receveur</managed-bean-class>
   <managed-bean-scope>request</managed-bean-scope>
  </managed-bean>
+ <navigation-rule>
+  <from-view-id>/start.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>about</from-outcome>
+   <to-view-id>/PAGE/about.xhtml</to-view-id>
+  </navigation-case>
+  <navigation-case>
+   <from-outcome>enregistrerReceveur</from-outcome>
+   <to-view-id>/PAGE/enregistrerReceveur.xhtml</to-view-id>
+  </navigation-case>
+  <navigation-case>
+   <from-outcome>enregistrerDonneur</from-outcome>
+   <to-view-id>/PAGE/enregistrerDonneur.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ <navigation-rule>
+  <from-view-id>/PAGE/enregistrerReceveur.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>listeReceveur</from-outcome>
+   <to-view-id>/PAGE/listeReceveur.xhtml</to-view-id>
+  </navigation-case>
+  <navigation-case>
+   <from-outcome>editReceveur</from-outcome>
+   <to-view-id>/PAGE/editReceveur.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ <navigation-rule>
+  <from-view-id>/PAGE/listeDonneur.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>editDonneur</from-outcome>
+   <to-view-id>/PAGE/editDonneur.xhtml</to-view-id>
+  </navigation-case>
+  <navigation-case>
+   <from-outcome>enregistrerDonneur</from-outcome>
+   <to-view-id>/PAGE/enregistrerDonneur.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ <navigation-rule>
+  <from-view-id>/PAGE/enregistrerDonneur.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>listeDonneur</from-outcome>
+   <to-view-id>/PAGE/listeDonneur.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ <navigation-rule>
+  <from-view-id>/PAGE/listeReceveur.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>enregistrerReceveur</from-outcome>
+   <to-view-id>/PAGE/enregistrerReceveur.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
  <application>
   <view-handler>com.sun.facelets.FaceletViewHandler</view-handler>
  </application>

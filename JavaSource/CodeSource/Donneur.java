@@ -126,9 +126,7 @@ public class Donneur {
 	
 	// la methode qui enregistre un nouveau donneur dans la base de donnée
 	public void EnregistrerDonneur(){
-		int info = dbConnection.updateDataBase(
-			"insert into donneur(nom_donneur,prenom_donneur,sexe_donneur,groupe_sanguin_donneur)" +
-			"values('"+this.nom_donneur+"','"+this.prenom_donneur+"','"+this.sexe_donneur+"','"+this.groupe_sanguin_donneur+"')");
+		int info = dbConnection.updateDataBase("insert into donneur(nom_donneur,prenom_donneur,sexe_donneur,groupe_sanguin_donneur)values('"+this.nom_donneur+"','"+this.prenom_donneur+"','"+this.sexe_donneur+"','"+this.groupe_sanguin_donneur+"')");
 		if (info > 0)
 			this.setInfo("Enregistrement Reussi");
 		else

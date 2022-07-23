@@ -130,9 +130,7 @@ public class Receveur {
 
 	// la methode qui enregistre un nouveau donneur dans la base de donnée
 	public void EnregistrerReceveur(){
-		int info = dbConnection.updateDataBase(
-			"insert into receveur(nom_receveur,prenom_receveur,sexe_receveur,groupe_sanguin_receveur)" +
-			"values('"+this.nom_receveur+"','"+this.prenom_receveur+"','"+this.sexe_receveur+"','"+this.groupe_sanguin_receveur+"')");
+		int info = dbConnection.updateDataBase("insert into receveur(nom_receveur,prenom_receveur,sexe_receveur,groupe_sanguin_receveur)values('"+this.nom_receveur+"','"+this.prenom_receveur+"','"+this.sexe_receveur+"','"+this.groupe_sanguin_receveur+"')");
 		if (info > 0)
 			this.setInfo("Enregistrement Reussi");
 		else

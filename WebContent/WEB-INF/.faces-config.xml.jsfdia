@@ -1,2 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<PROCESS model-entity="JSFProcess"/>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:#start.xhtml" PATH="/start.xhtml"
+  SHAPE="8,176,50,73" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#start.xhtml:0" NAME="item"
+   PATH="/start.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="about::#PAGE#about.xhtml" NAME="output"
+    PATH="/PAGE/about.xhtml" TARGET="rules:#PAGE#about.xhtml"
+    TITLE="about" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="enregistrerReceveur::#PAGE#enregistrerReceveur.xhtml"
+    NAME="output2" PATH="/PAGE/enregistrerReceveur.xhtml"
+    TARGET="rules:#PAGE#enregistrerReceveur.xhtml"
+    TITLE="enregistrerReceveur" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="enregistrerDonneur::#PAGE#enregistrerDonneur.xhtml"
+    NAME="output1" PATH="/PAGE/enregistrerDonneur.xhtml"
+    TARGET="rules:#PAGE#enregistrerDonneur.xhtml"
+    TITLE="enregistrerDonneur" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#PAGE#about.xhtml" PATH="/PAGE/about.xhtml"
+  SHAPE="128,40,50,25" model-entity="JSFProcessGroup" persistent="true"/>
+ <PROCESS-ITEM NAME="rules:#PAGE#editDonneur.xhtml"
+  PATH="/PAGE/editDonneur.xhtml" SHAPE="448,64,50,25"
+  model-entity="JSFProcessGroup" persistent="true"/>
+ <PROCESS-ITEM NAME="rules:#PAGE#editReceveur.xhtml"
+  PATH="/PAGE/editReceveur.xhtml" SHAPE="296,144,50,25"
+  model-entity="JSFProcessGroup" persistent="true"/>
+ <PROCESS-ITEM NAME="rules:#PAGE#enregistrerReceveur.xhtml"
+  PATH="/PAGE/enregistrerReceveur.xhtml" SHAPE="128,344,50,41" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#PAGE#enregistrerReceveur.xhtml:0" NAME="item"
+   PATH="/PAGE/enregistrerReceveur.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="listeReceveur::#PAGE#listeReceveur.xhtml"
+    NAME="output" PATH="/PAGE/listeReceveur.xhtml"
+    TARGET="rules:#PAGE#listeReceveur.xhtml" TITLE="listeReceveur" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="editReceveur::#PAGE#editReceveur.xhtml"
+    NAME="output1" PATH="/PAGE/editReceveur.xhtml"
+    TARGET="rules:#PAGE#editReceveur.xhtml" TITLE="editReceveur" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#PAGE#listeDonneur.xhtml"
+  PATH="/PAGE/listeDonneur.xhtml" SHAPE="96,456,50,25" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#PAGE#listeDonneur.xhtml:0" NAME="item"
+   PATH="/PAGE/listeDonneur.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="editDonneur::#PAGE#editDonneur.xhtml"
+    NAME="output" PATH="/PAGE/editDonneur.xhtml"
+    TARGET="rules:#PAGE#editDonneur.xhtml" TITLE="editDonneur" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="enregistrerDonneur::#PAGE#enregistrerDonneur.xhtml"
+    NAME="output1" PATH="/PAGE/enregistrerDonneur.xhtml"
+    TARGET="rules:#PAGE#enregistrerDonneur.xhtml"
+    TITLE="enregistrerDonneur" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#PAGE#listeReceveur.xhtml"
+  PATH="/PAGE/listeReceveur.xhtml" SHAPE="552,528,50,25" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#PAGE#listeReceveur.xhtml:0" NAME="item"
+   PATH="/PAGE/listeReceveur.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="enregistrerReceveur::#PAGE#enregistrerReceveur.xhtml"
+    NAME="output" PATH="/PAGE/enregistrerReceveur.xhtml"
+    TARGET="rules:#PAGE#enregistrerReceveur.xhtml"
+    TITLE="enregistrerReceveur" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#PAGE#enregistrerDonneur.xhtml"
+  PATH="/PAGE/enregistrerDonneur.xhtml" SHAPE="462,262,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#PAGE#enregistrerDonneur.xhtml:0" NAME="item"
+   PATH="/PAGE/enregistrerDonneur.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="listeDonneur::#PAGE#listeDonneur.xhtml"
+    NAME="output" PATH="/PAGE/listeDonneur.xhtml"
+    TARGET="rules:#PAGE#listeDonneur.xhtml" TITLE="listeDonneur" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+</PROCESS>

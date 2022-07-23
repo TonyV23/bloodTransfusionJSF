@@ -7,15 +7,24 @@
 	xmlns:a4j="http://richfaces.org/a4j">
 
   <head>
-    <title>RichFaces</title>
+    <meta  http-equiv="Content-Type" content="text/html; charset=utf-8" />
   </head>
 
   <body>
-  	<rich:panel>
-  		<f:facet name="header">
-  			JBoss RichFaces
-  		</f:facet>
-  		Looks like you are up and running...
-  	</rich:panel>
+	  <div style="text-align: center">
+	  		<h:graphicImage value="/COMPOSANT/poche_de_sang.png" style="height:150px;width:150"/>
+			<p style="font-size: 50px">GESTION DE <span style="color: red">TRANSFUSION SANGUINE</span></p>
+	   		<h:form>
+		  		<a4j:commandButton action="enregistrerReceveur" value="GERER LES RECEVEURS" data="Bienvenue sur la gestion des receveurs" oncomplete="alert(data)" style="font-size: 10px;font-weight: 800; padding:10px 100px;color:#000;background-color: #fff;border-radius:4px;cursor: pointer;border: none;outline: none;"/>
+		  		<a4j:commandButton action="enregistrerDonneur" value="GERER LES DONNEURS" data="Bienvenue sur la gestion des donneurs" oncomplete="alert(data)" style="font-size: 10px;font-weight: 800; padding:10px 10px;color:#000;background-color: #fff;border-radius:4px;cursor: pointer;border: none;outline: none;"/>
+	   		</h:form>	
+	  </div>
+	  <br/><br />
+	  <div style="background-color:#1c1947; height:350px; width:100%">
+	  		
+	  			<a4j:commandButton action="about" value="A propos de nous" style="font-size: 20px;font-weight: 800; padding:20px 20px;color:#fff;background-color: #1c1947;border-radius:4px;cursor: pointer;border: none;outline: none; text-align:center;"/>
+	  			
+	  </div>
   </body>
+  
 </html>
